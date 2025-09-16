@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catholic Spiritual Resources</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>✝ Catholic Spiritual Resources ✝</h1>
+            <p>Your daily companion for prayer, reflection, and spiritual growth</p>
+        </div>
+
+        <div class="login-section" id="loginSection">
+            <h2 style="text-align: center; margin-bottom: 20px; color: #1e3c72;">Welcome Back</h2>
+            <div class="login-form">
+                <input type="text" id="username" placeholder="Username" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button class="btn" onclick="login()">Sign In</button>
+            </div>
+            <p style="text-align: center; margin-top: 15px; color: #666;">
+                Demo: Use any username and password to continue
+            </p>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div class="welcome-user" id="welcomeMessage">
+                Welcome back! 
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </div>
+
+            <div class="nav-buttons">
+                <button class="nav-btn active" onclick="showSection('daily')">Daily Inspiration</button>
+                <button class="nav-btn" onclick="showSection('prayers')">Prayers</button>
+                <button class="nav-btn" onclick="showSection('saints')">Saints & Angels</button>
+                <button class="nav-btn" onclick="showSection('mass')">Mass Resources</button>
+                <button class="nav-btn" onclick="showSection('liturgy')">Liturgical Prayers</button>
+            </div>
+
+            <div id="dailySection" class="section-content">
+                <div class="card-grid">
+                    <div class="card">
+                        <h2>📖 Daily Bible Verse</h2>
+                        <div class="quote-display" id="dailyVerse">
+                            <div id="verseText">Loading verse...</div>
+                            <div class="verse-reference" id="verseReference"></div>
+                        </div>
+                        <button class="btn" onclick="getNewVerse()">New Verse</button>
+                    </div>
+                    
+                    <div class="card">
+                        <h2>🙏 Random Prayer</h2>
+                        <div class="prayer-text" id="randomPrayer">Loading prayer...</div>
+                        <button class="btn" onclick="getRandomPrayer()">New Prayer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="prayersSection" class="section-content" style="display: none;">
+                <div class="card">
+                    <h2>🙏 Common Catholic Prayers</h2>
+                    <div id="prayersContent"></div>
+                </div>
+            </div>
+
+            <div id="saintsSection" class="section-content" style="display: none;">
+                <div class="card">
+                    <h2>👼 Saints and Angels</h2>
+                    <div id="saintsContent"></div>
+                    <button class="btn" onclick="getRandomSaint()">Random Saint</button>
+                </div>
+            </div>
+
+            <div id="massSection" class="section-content" style="display: none;">
+                <div class="card">
+                    <h2>📺 Mass Videos</h2>
+                    <div id="massContent"></div>
+                </div>
+            </div>
+
+            <div id="liturgySection" class="section-content" style="display: none;">
+                <div class="card">
+                    <h2>⛪ Liturgical Prayers</h2>
+                    <div id="liturgyContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

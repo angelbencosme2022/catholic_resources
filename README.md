@@ -1,1 +1,1 @@
-# catholic_resources
+# Catholic Resources
